@@ -32,8 +32,11 @@ map("bcf", {7})
 map("cfo", {8})
 ```
 
-2. In the next step traverse over the list of words in L, look for each word in the map and add the indices from the map in the TreeSet. The reason to use TreeSet instead of a list of a simple set is because there can be repeating indicices coming from the hashMap. The idea is to have a sorted list of only unique indices. For that reason a treeSet is used which results in sorted set and later gets converted to a arrayList.
+2. In the next step traverse over the list of words in L, look for each word in the map and add the indices from the map in the TreeSet. The reason to use TreeSet instead of a list or a simple set is because there can be repeating indicices coming from the hashMap. The idea is to have a sorted list of only unique indices. For that reason a treeSet is used which results in sorted set and later gets converted to a arrayList.
+```
+treeSet = {0,3,9}
+```
 
-3. Traverse over the list generated in step 2. Take the index from arrayList and add to it length of word in L since the length of all words will be same adding the wordLen to ith index will give us a number. Check if the number exist in the arrayList. if it does look for next index.
+3. Traverse over the list generated in step 2. Take the index from arrayList and add to it length of word in L since the length of all words will be same adding the wordLen to ith index will give us a number. Check if the number exist in the arrayList. if it does look for next index. Repeat it until end of list L.
 
 The time complexity is O(n^2)
