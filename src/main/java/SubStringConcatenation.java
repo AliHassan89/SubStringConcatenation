@@ -66,12 +66,12 @@ public class SubStringConcatenation {
         List<Integer> allIndices = new ArrayList<>(allIndicesSet);
 
         boolean notFound;
-        for (int i=0; i<allIndices.size(); i++) {
-            int index = allIndices.get(i);
+        for (Integer allIndice : allIndices) {
+            int index = allIndice;
             notFound = false;
             int j = 0;
-            while (j<B.size()) {
-                if (!allIndices.contains(index)) {
+            while (j < B.size()) {
+                if (!allIndicesSet.contains(index)) {
                     notFound = true;
                     break;
                 }
@@ -79,7 +79,7 @@ public class SubStringConcatenation {
                 j++;
             }
             if (!notFound)
-                result.add(allIndices.get(i));
+                result.add(allIndice);
         }
 
         return result;
